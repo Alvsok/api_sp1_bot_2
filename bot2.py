@@ -76,6 +76,7 @@ def main(target_work_name):
                 res = parse_homework_status(new_homework.get('homeworks')[0])
                 send_message(res)
                 flag = False
+                time.sleep(9999999999)
             else:
                 time.sleep(1000)
 
