@@ -95,6 +95,7 @@ f = open('flag.txt', 'r')
 flag = f.read(1)
 f.close()
 
-if flag == '0':
-    if __name__ == '__main__':
-        main(ASK)
+# if flag == '0':
+
+# if __name__ == '__main__':
+#    main(ASK)
