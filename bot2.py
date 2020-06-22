@@ -76,12 +76,9 @@ def main(target_work_name):
             if target_work_name in work_name:
                 res = parse_homework_status(new_homework.get('homeworks')[0])
                 send_message(res)
-                f = open('flag.txt', 'w')
-                f.write('1')
-                f.close()
-                # return
                 # flag = False
-                time.sleep(99999999)
+                # time.sleep(99999999)
+                return
             else:
                 time.sleep(1000)
 
@@ -91,11 +88,5 @@ def main(target_work_name):
             continue
 
 
-f = open('flag.txt', 'r')
-flag = f.read(1)
-f.close()
-
-# if flag == '0':
-
 # if __name__ == '__main__':
-#    main(ASK)
+main(ASK)
