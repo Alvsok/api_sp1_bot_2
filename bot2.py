@@ -11,6 +11,7 @@ PRACTICUM_TOKEN = os.getenv("PRACTICUM_TOKEN")
 TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
 CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
 URL_PRAK_YANDEX = 'https://praktikum.yandex.ru/api/user_api/homework_statuses/'
+ASK = 'api_sp1_bot'
 
 
 bot = telegram.Bot(token=TELEGRAM_TOKEN)
@@ -75,8 +76,11 @@ def main(target_work_name):
             if target_work_name in work_name:
                 res = parse_homework_status(new_homework.get('homeworks')[0])
                 send_message(res)
-                return
-                # flag = Falses
+                f = open('flag.txt', 'w')
+                f.write('1')
+                f.close()
+                # return
+                # flag = False
                 # time.sleep(99999999)
             else:
                 time.sleep(1000)
@@ -87,6 +91,10 @@ def main(target_work_name):
             continue
 
 
-ask = 'api_sp1_bot'
-if __name__ == '__main__':
-    main(ask)
+f = open('flag.txt', 'r')
+flag = f.read(1)
+f.close()
+
+if flag == '0':
+    if __name__ == '__main__':
+        main(ASK)
