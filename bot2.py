@@ -65,9 +65,9 @@ def send_message(message):
 
 def main(target_work_name):
 
-    flag = True
+    # flag = True
 
-    while flag:
+    while True:
         try:
             new_homework = get_homework_statuses()
             work_name = new_homework.get('homeworks')[0].get('homework_name')
@@ -75,8 +75,9 @@ def main(target_work_name):
             if target_work_name in work_name:
                 res = parse_homework_status(new_homework.get('homeworks')[0])
                 send_message(res)
-                flag = False
-                time.sleep(9999999999)
+                return
+                # flag = Falses
+                # time.sleep(99999999)
             else:
                 time.sleep(1000)
 
