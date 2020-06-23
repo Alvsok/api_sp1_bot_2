@@ -11,7 +11,10 @@ PRACTICUM_TOKEN = os.getenv("PRACTICUM_TOKEN")
 TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
 CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
 URL_PRAK_YANDEX = 'https://praktikum.yandex.ru/api/user_api/homework_statuses/'
-ASK = 'api_sp1_bot'
+
+
+# name_topic = 'api_sp1_bot'
+name_topic = None
 
 
 bot = telegram.Bot(token=TELEGRAM_TOKEN)
@@ -88,5 +91,6 @@ def main(target_work_name):
             continue
 
 
-# if __name__ == '__main__':
-main(ASK)
+if name_topic is not None:
+    if __name__ == '__main__':
+        main(name_topic)
